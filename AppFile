@@ -54,7 +54,7 @@ export default class App extends Component {
                             width: 120,
                             margin: 15,
                             borderWidth: 7,
-                            borderColor: recycle.recyleBorder,
+                            borderColor: recycle.recycleBorder,
                             alignItems: 'center',
                             justifyContent: 'center', }}
                         >

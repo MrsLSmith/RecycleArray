@@ -1,0 +1,109 @@
+import React, { Component } from 'react';
+import { AppRegistry, Text, View, StyleSheet, Image, Dimensions } from 'react-native';
+import Constants from 'expo-constants';
+
+let deviceHeight = Dimensions.get('window').height;
+let deviceWidth = Dimensions.get('window').width;
+
+export default class App extends Component {
+    
+    state = {
+        recycleItems: [
+            {
+                recycleImage: 'https://resizing.flixster.com/3F-PuxopAlRtEArIsMmJPdCAXmE=/206x305/v1.bTsxMTM3MjM3MTtqOzE4NDQ2OzEyMDA7MTUwMDsyMDAw',
+                recycleName: 'My Cousin Vinny',
+                recycleBorder: 'black',
+            },
+             {
+                recycleImage: 'https://resizing.flixster.com/3F-PuxopAlRtEArIsMmJPdCAXmE=/206x305/v1.bTsxMTM3MjM3MTtqOzE4NDQ2OzEyMDA7MTUwMDsyMDAw',
+                recycleName: 'My Cousin Vinny',
+                recycleBorder: 'blue',
+            },
+             {
+                recycleImage: 'https://resizing.flixster.com/3F-PuxopAlRtEArIsMmJPdCAXmE=/206x305/v1.bTsxMTM3MjM3MTtqOzE4NDQ2OzEyMDA7MTUwMDsyMDAw',
+                recycleName: 'My Cousin Vinny',
+                recycleBorder: 'black',
+            },
+             {
+                recycleImage: 'https://resizing.flixster.com/3F-PuxopAlRtEArIsMmJPdCAXmE=/206x305/v1.bTsxMTM3MjM3MTtqOzE4NDQ2OzEyMDA7MTUwMDsyMDAw',
+                recycleName: 'My Cousin Vinny',
+                recycleBorder: 'black',
+            },
+             {
+                recycleImage: 'https://resizing.flixster.com/3F-PuxopAlRtEArIsMmJPdCAXmE=/206x305/v1.bTsxMTM3MjM3MTtqOzE4NDQ2OzEyMDA7MTUwMDsyMDAw',
+                recycleName: 'My Cousin Vinny',
+                recycleBorder: 'black',
+            },
+             {
+                recycleImage: 'https://resizing.flixster.com/3F-PuxopAlRtEArIsMmJPdCAXmE=/206x305/v1.bTsxMTM3MjM3MTtqOzE4NDQ2OzEyMDA7MTUwMDsyMDAw',
+                recycleName: 'My Cousin Vinny',
+                recycleBorder: 'black',
+            },
+            
+            
+        ]
+    }
+    
+    render() {
+        return (
+            <View style={styles.container}>
+                {this.state.recycleItems.map((recycle) => (
+                    <View style={styles.recycleItem}>
+                        <View style={{ backgroundColor: 'white',
+                            height: 120,
+                            width: 120,
+                            margin: 15,
+                            borderWidth: 7,
+                            borderColor: recycle.recyleBorder,
+                            alignItems: 'center',
+                            justifyContent: 'center', }}>
+                            <Image
+                            source={{ uri:recycle.recycleImage }}
+                            style={styles.image}
+                            />
+                        </View>
+                        
+                        <View style={styles.textView}>
+                            <Text style={styles.caption}>
+                                {recycle.recycleName}
+                            </Text>
+                        </View>
+                    </View>
+                ))}
+            </View>
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#ecf0f1',
+        flexDirection: 'row',
+        flexWrap:'wrap',
+    },
+    rowContainer: {
+        height: 150,
+        width: deviceWidth,
+        flexDirection: 'row',
+    },
+    recycleItem: {
+        width: deviceWidth/2,
+    },
+    image: {
+        height: 85,
+        width: 100,
+    },
+    imageRotate: {
+        height: 100,
+        width: 85,
+        transform: [{ rotate: '90deg' }],
+    },
+    textView: {
+        alignItems:'center',
+        justifyContent: 'center',
+    },
+    caption: {
+        fontWeight: 'bold',
+    },
+});

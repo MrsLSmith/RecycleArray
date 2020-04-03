@@ -56,7 +56,8 @@ export default class App extends Component {
                             borderWidth: 7,
                             borderColor: recycle.recyleBorder,
                             alignItems: 'center',
-                            justifyContent: 'center', }}>
+                            justifyContent: 'center', }}
+                        >
                             <Image
                             source={{ uri:recycle.recycleImage }}
                             style={styles.image}
